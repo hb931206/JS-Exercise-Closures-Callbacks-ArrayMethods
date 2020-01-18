@@ -90,10 +90,20 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
+function processSum(numberList, callback) {
   /* CODE HERE */
-}
 
+  let num = numberList.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue;
+  },0)
+  return callback(num);
+
+}
+// Alternative Way of Doing it with arrow Notation
+// let num = numberList.reduce((accumulator, currentValue) =>
+//   accumulator + currentValue,0)
+//   return callback(num);
+// }
 /**
  * ### Challenge `processProduct`
  * 
@@ -112,7 +122,11 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
+  let product = num1 * num2;
+  return callback(product);
+
+
   /* CODE HERE */
 }
 
