@@ -247,8 +247,8 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  let size = runners.filter(function(person){
-    return person.shirt_size === "S" && "M" && "L" && "XL" && "2XL" && "3XL"
+  let size = runners.filter(function(runner){
+    return runner.shirt_size === tShirtSize;
   });
   return size;
 }
