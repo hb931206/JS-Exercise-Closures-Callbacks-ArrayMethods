@@ -93,7 +93,7 @@ function processLastItem(stringList, callback) {
 function processSum(numberList, callback) {
   /* CODE HERE */
 
-  let num = numberList.reduce(function(accumulator, currentValue){
+  let num = numberList.reduce((accumulator, currentValue)=>{
     return accumulator + currentValue;
   },0)
   return callback(num);
@@ -247,7 +247,7 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  let size = runners.filter(function(runner){
+  return runners.filter(function(runner){
     return runner.shirt_size === tShirtSize;
   });
   return size;
@@ -264,8 +264,12 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  
+return runners.reduce((accum, current) =>{
+  return accum +current.donation;
+},0);
+
 }
+  
 
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
